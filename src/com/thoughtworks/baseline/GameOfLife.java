@@ -23,6 +23,8 @@ public class GameOfLife {
             count++;
         if (state[i - 1][j] == "X")
             count++;
+        if (state[i - 1][j + 1] == "X")
+            count++;
         return count;
     }
 }
