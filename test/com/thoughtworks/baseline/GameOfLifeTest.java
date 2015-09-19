@@ -119,9 +119,9 @@ public class GameOfLifeTest {
     }
 
     @Test
-    public void shouldReturnHypenWhenNeighboursCountIsGreaterThan2() {
+    public void shouldReturnXWhenNeighboursCountIsGreaterThan1() {
         String[][] state = {{"X", "X", "X"}, {"X", "-", "X"}, {"X", "X", "X"}};
         GameOfLife gameOfLife = new GameOfLife(state);
-        assertEquals("X", gameOfLife.generateNewState(3));
+        assertEquals("X", gameOfLife.generateNewState(2));
     }
 }
