@@ -31,7 +31,7 @@ public class GameOfLifeTest {
     public void shouldReturnTwoWhenThereAreTwoNeighboursAlive() {
         String[][] state = {{"X", "X"}, {"-", "-"}, {"X", "X"}};
         GameOfLife gameOfLife = new GameOfLife(state);
-        assertEquals(3, gameOfLife.checkForNeighboursCount(1, 1));
+        assertEquals(4, gameOfLife.checkForNeighboursCount(1, 1));
     }
 
     @Test
@@ -59,7 +59,7 @@ public class GameOfLifeTest {
     public void shouldNotCheckIfColumnIndexValueIsNegative() {
         String[][] state = {{"X", "X", "X"}, {"X", "-", "-"}, {"-", "-", "-"}};
         GameOfLife gameOfLife = new GameOfLife(state);
-        assertEquals(1, gameOfLife.checkForNeighboursCount(0, 0));
+        assertEquals(2, gameOfLife.checkForNeighboursCount(0, 0));
     }
 
     @Test
@@ -95,5 +95,12 @@ public class GameOfLifeTest {
         String[][] state = {{"X", "X", "X"}, {"X", "-", "X"}, {"X", "X", "-"}};
         GameOfLife gameOfLife = new GameOfLife(state);
         assertEquals(7, gameOfLife.checkForNeighboursCount(1, 1));
+    }
+
+    @Test
+    public void shouldReturnEightWhenThereAreEightNeighboursAlive() {
+        String[][] state = {{"X", "X", "X"}, {"X", "-", "X"}, {"X", "X", "X"}};
+        GameOfLife gameOfLife = new GameOfLife(state);
+        assertEquals(8, gameOfLife.checkForNeighboursCount(1, 1));
     }
 }
