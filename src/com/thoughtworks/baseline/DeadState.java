@@ -1,10 +1,9 @@
 package com.thoughtworks.baseline;
 
-//Calculates new state for alive cells
-public class AliveState implements State {
-    private String state = "X";
+public class DeadState implements State{
+    private String state = "-";
 
-    public AliveState(String state) {
+    public DeadState(String state) {
         this.state = state;
     }
 
