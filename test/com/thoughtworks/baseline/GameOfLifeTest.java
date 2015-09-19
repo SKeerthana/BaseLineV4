@@ -89,4 +89,11 @@ public class GameOfLifeTest {
         GameOfLife gameOfLife = new GameOfLife(state);
         assertEquals(0, gameOfLife.checkForNeighboursCount(2, 2));
     }
+
+    @Test
+    public void shouldReturnSevenWhenThereAreSevenNeighboursAlive() {
+        String[][] state = {{"X", "X", "X"}, {"X", "-", "X"}, {"X", "X", "-"}};
+        GameOfLife gameOfLife = new GameOfLife(state);
+        assertEquals(7, gameOfLife.checkForNeighboursCount(1, 1));
+    }
 }

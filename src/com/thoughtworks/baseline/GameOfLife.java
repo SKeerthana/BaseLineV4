@@ -30,6 +30,8 @@ public class GameOfLife {
             count++;
         if (i + 1 < state.length && j - 1 >= 0 && state[i + 1][j - 1] == "X")
             count++;
+        if (i + 1 < state.length && state[i+1][j] == "X")
+            count++;
         return count;
     }
 }
