@@ -21,6 +21,8 @@ public class GameOfLife {
     public String generateNewState(int neighboursCount, String state) {
         if ((neighboursCount < 2 || neighboursCount > 3) && state.equals("X"))
             return "-";
+        if (state.equals("-") && neighboursCount != 3)
+            return "-";
         return "X";
     }
 

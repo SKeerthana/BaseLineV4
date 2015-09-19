@@ -147,10 +147,10 @@ public class GameOfLifeTest {
     }
 
     @Test
-    public void shouldReturnXWhenCurrentStateIsHyphenAndNeighboursCountIsEqualTo2() {
+    public void shouldReturnHyphenWhenCurrentStateIsHyphenAndNeighboursCountIsEqualTo2() {
         String[][] state = {{"X", "X", "X"}, {"X", "-", "X"}, {"X", "X", "X"}};
         GameOfLife gameOfLife = new GameOfLife(state);
-        assertEquals("X", gameOfLife.generateNewState(2, "-"));
+        assertEquals("-", gameOfLife.generateNewState(2, "-"));
     }
 
     @Test
