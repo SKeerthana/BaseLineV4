@@ -36,6 +36,6 @@ public class Cell {
         if (that == null || that.getClass() != getClass())
             return false;
         Cell thatCell = (Cell) that;
-        return (thatCell.rowNumber == rowNumber);
+        return (thatCell.rowNumber == rowNumber && thatCell.columnNumber == columnNumber);
     }
 }
