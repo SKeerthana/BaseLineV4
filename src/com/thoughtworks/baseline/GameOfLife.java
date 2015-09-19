@@ -11,7 +11,7 @@ public class GameOfLife {
     public String[][] generateNextGeneration() {
         for (int i = 0; i < state.length; i++) {
             for (int j = 0; j < state[0].length; j++) {
-                int neighboursCount = checkForNeighboursCount(i,j);
+                int neighboursCount = checkForNeighboursCount(i, j);
                 String newState = generateNewState(neighboursCount);
             }
         }
@@ -19,7 +19,7 @@ public class GameOfLife {
     }
 
     public String generateNewState(int neighboursCount) {
-        if (neighboursCount < 2)
+        if (neighboursCount < 2 || neighboursCount > 3)
             return "-";
         return "X";
     }

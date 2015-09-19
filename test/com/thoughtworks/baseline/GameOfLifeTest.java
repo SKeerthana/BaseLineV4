@@ -112,7 +112,7 @@ public class GameOfLifeTest {
     }
 
     @Test
-    public void shouldReturnHypenWhenNeighboursCountIsZero() {
+    public void shouldReturnHyphenWhenNeighboursCountIsZero() {
         String[][] state = {{"X", "X", "X"}, {"X", "-", "X"}, {"X", "X", "X"}};
         GameOfLife gameOfLife = new GameOfLife(state);
         assertEquals("-", gameOfLife.generateNewState(0));
@@ -123,5 +123,12 @@ public class GameOfLifeTest {
         String[][] state = {{"X", "X", "X"}, {"X", "-", "X"}, {"X", "X", "X"}};
         GameOfLife gameOfLife = new GameOfLife(state);
         assertEquals("X", gameOfLife.generateNewState(2));
+    }
+
+    @Test
+    public void shouldReturnHyphenWhenNeighboursCountIsGreaterThan3() {
+        String[][] state = {{"X", "X", "X"}, {"X", "-", "X"}, {"X", "X", "X"}};
+        GameOfLife gameOfLife = new GameOfLife(state);
+        assertEquals("-", gameOfLife.generateNewState(4));
     }
 }
