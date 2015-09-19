@@ -12,9 +12,14 @@ public class GameOfLife {
         for (int i = 0; i < state.length; i++) {
             for (int j = 0; j < state[0].length; j++) {
                 int neighboursCount = checkForNeighboursCount(i,j);
+                String newState = generateNewState(neighboursCount);
             }
         }
         return state;
+    }
+
+    private String generateNewState(int neighboursCount) {
+        return "X";
     }
 
     public int checkForNeighboursCount(int i, int j) {
