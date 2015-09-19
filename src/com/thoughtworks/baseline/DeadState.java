@@ -1,7 +1,7 @@
 package com.thoughtworks.baseline;
 
 //Calculates new state for dead cells
-public class DeadState implements State{
+public class DeadState implements State {
     private String state = "-";
 
     public DeadState(String state) {
@@ -17,11 +17,12 @@ public class DeadState implements State{
     public boolean equals(Object that) {
         if (that == null || that.getClass() != getClass())
             return false;
-        return true;
+        DeadState thatState = (DeadState) that;
+        return thatState.state.equals(state);
     }
 
     @Override
-    public boolean isAlive(){
+    public boolean isAlive() {
         return false;
     }
 }

@@ -25,4 +25,20 @@ public class DeadStateTest {
 
         assertNotEquals(deadState, "SomeString");
     }
+
+    @Test
+    public void shouldReturnFalseWhenStateValueIsDifferent() {
+        DeadState deadState = new DeadState("X");
+        DeadState deadState1 = new DeadState("-");
+
+        assertNotEquals(deadState, deadState1);
+    }
+
+    @Test
+    public void shouldReturnTrueWhenStateValueIsSame() {
+        DeadState deadState = new DeadState("X");
+        DeadState deadState1 = new DeadState("X");
+
+        assertEquals(deadState, deadState1);
+    }
 }
