@@ -3,6 +3,7 @@ package com.thoughtworks.baseline;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
 
 public class AliveStateTest {
 
@@ -17,5 +18,17 @@ public class AliveStateTest {
         AliveState aliveState = new AliveState("X");
         DeadState deadState = new DeadState("-");
         assertEquals(deadState, aliveState.generateNewState(1));
+    }
+
+    @Test
+    public void shouldReturnFalseWhenComparedWithNull() {
+        AliveState aliveState = new AliveState("X");
+        assertNotEquals(aliveState, null);
+    }
+
+    @Test
+    public void shouldReturnFalseWhenComparedWithAnotherObjectOfDifferentType() {
+        AliveState aliveState = new AliveState("X");
+        assertNotEquals(aliveState, "SomeString");
     }
 }
