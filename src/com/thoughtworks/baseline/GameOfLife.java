@@ -21,6 +21,8 @@ public class GameOfLife {
         int count = 0;
         if (state[i - 1][j - 1] == "X")
             count++;
+        if (state[i - 1][j] == "X")
+            count++;
         return count;
     }
 }
