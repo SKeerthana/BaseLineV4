@@ -1,5 +1,7 @@
 package com.thoughtworks.baseline;
 
+import java.util.List;
+
 //Generates next state based on the current state of cells
 public class GameOfLife {
     private String[][] state;

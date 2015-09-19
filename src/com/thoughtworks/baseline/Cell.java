@@ -14,6 +14,12 @@ public class Cell {
         this.columnNumber = columnNumber;
     }
 
+    public Cell generateNewState(List<Cell> listOfCells) {
+        int neighboursAlive = checkForNeighboursAliveCount(listOfCells);
+        State newState = currentState.generateNewState(neighboursAlive);
+        return new Cell(newState, rowNumber, columnNumber);
+    }
+
     public int checkForNeighboursAliveCount(List<Cell> listOfCells) {
         int[] neighboursRowIndex = {-1, -1, -1, 0, 0, 0, 1, 1, 1};
         int[] neighboursColumnIndex = {-1, 0, 1, -1, 0, 1, -1, 0, 1};
