@@ -18,6 +18,8 @@ public class AliveState implements State {
 
     @Override
     public boolean equals(Object that) {
+        if (that == this)
+            return true;
         if (that == null || that.getClass() != getClass())
             return false;
         AliveState thatAliveState = (AliveState) that;

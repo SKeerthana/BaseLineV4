@@ -51,4 +51,11 @@ public class AliveStateTest {
 
         assertEquals(aliveState1, aliveState2);
     }
+
+    @Test
+    public void shouldBeComparedToItself() {
+        AliveState aliveState1 = new AliveState("X");
+
+        assertEquals(aliveState1, aliveState1);
+    }
 }
