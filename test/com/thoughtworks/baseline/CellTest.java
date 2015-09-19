@@ -78,4 +78,11 @@ public class CellTest {
         Cell cell2 = new Cell(new DeadState("-"), 0, 2);
         assertNotEquals(cell1, cell2);
     }
+
+    @Test
+    public void shouldReturnFalseWhenRowNumberAndColumnNumberAreDifferent() {
+        Cell cell1 = new Cell(new AliveState("X"), 1, 1);
+        Cell cell2 = new Cell(new DeadState("-"), 0, 2);
+        assertNotEquals(cell1, cell2);
+    }
 }
