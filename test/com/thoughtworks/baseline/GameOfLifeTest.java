@@ -14,6 +14,13 @@ public class GameOfLifeTest {
     }
 
     @Test
+    public void shouldGenerateNextGenerationForBoatPattern() {
+        String[][] state = {{"X", "X", "-"}, {"X", "-", "X"}, {"-", "X", "-"}};
+        GameOfLife gameOfLife = new GameOfLife(state);
+        assertArrayEquals(state, gameOfLife.generateNextGeneration());
+    }
+
+    @Test
     public void shouldReturnOneWhenOneIsNeighboursAlive() {
         String[][] state = {{"X", "-"}, {"-", "-"}};
         GameOfLife gameOfLife = new GameOfLife(state);
