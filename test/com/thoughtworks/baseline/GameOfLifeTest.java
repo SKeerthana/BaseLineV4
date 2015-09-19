@@ -105,44 +105,58 @@ public class GameOfLifeTest {
     }
 
     @Test
-    public void shouldReturnHypenWhenNeighboursCountIsOne() {
+    public void shouldReturnHyphenWhenCurrentStateIsXAndNeighboursCountIsOne() {
         String[][] state = {{"X", "X", "X"}, {"X", "-", "X"}, {"X", "X", "X"}};
         GameOfLife gameOfLife = new GameOfLife(state);
-        assertEquals("-", gameOfLife.generateNewState(1));
+        assertEquals("-", gameOfLife.generateNewState(1, "X"));
     }
 
     @Test
-    public void shouldReturnHyphenWhenNeighboursCountIsZero() {
+    public void shouldReturnHyphenWhenCurrentStateIsXAndNeighboursCountIsZero() {
         String[][] state = {{"X", "X", "X"}, {"X", "-", "X"}, {"X", "X", "X"}};
         GameOfLife gameOfLife = new GameOfLife(state);
-        assertEquals("-", gameOfLife.generateNewState(0));
+        assertEquals("-", gameOfLife.generateNewState(0, "X"));
     }
 
     @Test
-    public void shouldReturnXWhenNeighboursCountIsGreaterThan1() {
+    public void shouldReturnXWhenCurrentStateIsXAndNeighboursCountIsGreaterThan1() {
         String[][] state = {{"X", "X", "X"}, {"X", "-", "X"}, {"X", "X", "X"}};
         GameOfLife gameOfLife = new GameOfLife(state);
-        assertEquals("X", gameOfLife.generateNewState(2));
+        assertEquals("X", gameOfLife.generateNewState(2, "X"));
     }
 
     @Test
-    public void shouldReturnHyphenWhenNeighboursCountIsGreaterThan3() {
+    public void shouldReturnHyphenWhenCurrentStateIsXAndNeighboursCountIsGreaterThan3() {
         String[][] state = {{"X", "X", "X"}, {"X", "-", "X"}, {"X", "X", "X"}};
         GameOfLife gameOfLife = new GameOfLife(state);
-        assertEquals("-", gameOfLife.generateNewState(4));
+        assertEquals("-", gameOfLife.generateNewState(4, "X"));
     }
 
     @Test
-    public void shouldReturnXWhenNeighboursCountIsEqualTo2() {
+    public void shouldReturnXWhenCurrentStateIsXAndNeighboursCountIsEqualTo2() {
         String[][] state = {{"X", "X", "X"}, {"X", "-", "X"}, {"X", "X", "X"}};
         GameOfLife gameOfLife = new GameOfLife(state);
-        assertEquals("X", gameOfLife.generateNewState(2));
+        assertEquals("X", gameOfLife.generateNewState(2, "X"));
     }
 
     @Test
-    public void shouldReturnXWhenNeighboursCountIsEqualTo3() {
+    public void shouldReturnXWhenCurrentStateIsXAndNeighboursCountIsEqualTo3() {
         String[][] state = {{"X", "X", "X"}, {"X", "-", "X"}, {"X", "X", "X"}};
         GameOfLife gameOfLife = new GameOfLife(state);
-        assertEquals("X", gameOfLife.generateNewState(3));
+        assertEquals("X", gameOfLife.generateNewState(3, "X"));
+    }
+
+    @Test
+    public void shouldReturnXWhenCurrentStateIsHyphenAndNeighboursCountIsEqualTo2() {
+        String[][] state = {{"X", "X", "X"}, {"X", "-", "X"}, {"X", "X", "X"}};
+        GameOfLife gameOfLife = new GameOfLife(state);
+        assertEquals("X", gameOfLife.generateNewState(2, "-"));
+    }
+
+    @Test
+    public void shouldReturnXWhenCurrentStateIsHyphenAndNeighboursCountIsEqualTo3() {
+        String[][] state = {{"X", "X", "X"}, {"X", "-", "X"}, {"X", "X", "X"}};
+        GameOfLife gameOfLife = new GameOfLife(state);
+        assertEquals("X", gameOfLife.generateNewState(3, "-"));
     }
 }
