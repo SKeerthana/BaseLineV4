@@ -21,6 +21,7 @@ public class CellTest {
             add(cell3);
             add(cell4);
         }};
+
         assertEquals(2, cell1.checkForNeighboursAliveCount(listOfCells));
     }
 
@@ -36,6 +37,7 @@ public class CellTest {
             add(cell3);
             add(cell4);
         }};
+
         assertEquals(0, cell1.checkForNeighboursAliveCount(listOfCells));
     }
 
@@ -51,18 +53,21 @@ public class CellTest {
             add(cell3);
             add(cell4);
         }};
+
         assertEquals(cell4, cell1.findCell(listOfCells, 1, 1));
     }
 
     @Test
     public void shouldReturnFalseWhenCellIsComparedWithNull() {
         Cell cell = new Cell(new AliveState("X"), 0, 0);
+
         assertNotEquals(cell, null);
     }
 
     @Test
     public void shouldReturnFalseWhenCellIsComparedWithOtherObjects() {
         Cell cell = new Cell(new AliveState("X"), 0, 0);
+
         assertNotEquals(cell, "StringToTest");
     }
 
@@ -70,6 +75,7 @@ public class CellTest {
     public void shouldReturnFalseWhenOnlyRowNumberIsSame() {
         Cell cell1 = new Cell(new AliveState("X"), 0, 0);
         Cell cell2 = new Cell(new DeadState("-"), 0, 1);
+
         assertNotEquals(cell1, cell2);
     }
 
@@ -77,6 +83,7 @@ public class CellTest {
     public void shouldReturnFalseWhenRowNumberIsDifferent() {
         Cell cell1 = new Cell(new AliveState("X"), 0, 0);
         Cell cell2 = new Cell(new DeadState("-"), 1, 1);
+
         assertNotEquals(cell1, cell2);
     }
 
@@ -84,6 +91,7 @@ public class CellTest {
     public void shouldReturnTrueWhenRowNumberAndColumnNumberIsSame() {
         Cell cell1 = new Cell(new AliveState("X"), 0, 1);
         Cell cell2 = new Cell(new DeadState("-"), 0, 1);
+
         assertEquals(cell1, cell2);
     }
 
@@ -91,6 +99,7 @@ public class CellTest {
     public void shouldReturnTrueWhenColumnNumberIsDifferent() {
         Cell cell1 = new Cell(new AliveState("X"), 0, 1);
         Cell cell2 = new Cell(new DeadState("-"), 0, 2);
+
         assertNotEquals(cell1, cell2);
     }
 
@@ -98,6 +107,14 @@ public class CellTest {
     public void shouldReturnFalseWhenRowNumberAndColumnNumberAreDifferent() {
         Cell cell1 = new Cell(new AliveState("X"), 1, 1);
         Cell cell2 = new Cell(new DeadState("-"), 0, 2);
+
         assertNotEquals(cell1, cell2);
+    }
+
+    @Test
+    public void shouldBeComparedToItself() {
+        Cell cell1 = new Cell(new AliveState("X"), 1, 1);
+
+        assertEquals(cell1, cell1);
     }
 }
