@@ -18,7 +18,9 @@ public class GameOfLife {
         return state;
     }
 
-    private String generateNewState(int neighboursCount) {
+    public String generateNewState(int neighboursCount) {
+        if (neighboursCount < 2)
+            return "-";
         return "X";
     }
 

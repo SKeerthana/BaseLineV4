@@ -103,4 +103,25 @@ public class GameOfLifeTest {
         GameOfLife gameOfLife = new GameOfLife(state);
         assertEquals(8, gameOfLife.checkForNeighboursCount(1, 1));
     }
+
+    @Test
+    public void shouldReturnHypenWhenNeighboursCountIsOne() {
+        String[][] state = {{"X", "X", "X"}, {"X", "-", "X"}, {"X", "X", "X"}};
+        GameOfLife gameOfLife = new GameOfLife(state);
+        assertEquals("-", gameOfLife.generateNewState(1));
+    }
+
+    @Test
+    public void shouldReturnHypenWhenNeighboursCountIsZero() {
+        String[][] state = {{"X", "X", "X"}, {"X", "-", "X"}, {"X", "X", "X"}};
+        GameOfLife gameOfLife = new GameOfLife(state);
+        assertEquals("-", gameOfLife.generateNewState(0));
+    }
+
+    @Test
+    public void shouldReturnHypenWhenNeighboursCountIsGreaterThan2() {
+        String[][] state = {{"X", "X", "X"}, {"X", "-", "X"}, {"X", "X", "X"}};
+        GameOfLife gameOfLife = new GameOfLife(state);
+        assertEquals("X", gameOfLife.generateNewState(3));
+    }
 }
