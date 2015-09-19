@@ -9,13 +9,14 @@ public class GameOfLife {
     }
 
     public String[][] generateNextGeneration() {
+        String[][] newState = new String[state.length][state[0].length];
         for (int i = 0; i < state.length; i++) {
             for (int j = 0; j < state[0].length; j++) {
                 int neighboursCount = checkForNeighboursCount(i, j);
-                String newState = generateNewState(neighboursCount, state[i][j]);
+                newState[i][j] = generateNewState(neighboursCount, state[i][j]);
             }
         }
-        return state;
+        return newState;
     }
 
     public String generateNewState(int neighboursCount, String state) {
