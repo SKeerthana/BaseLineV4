@@ -138,4 +138,11 @@ public class GameOfLifeTest {
         GameOfLife gameOfLife = new GameOfLife(state);
         assertEquals("X", gameOfLife.generateNewState(2));
     }
+
+    @Test
+    public void shouldReturnXWhenNeighboursCountIsEqualTo3() {
+        String[][] state = {{"X", "X", "X"}, {"X", "-", "X"}, {"X", "X", "X"}};
+        GameOfLife gameOfLife = new GameOfLife(state);
+        assertEquals("X", gameOfLife.generateNewState(3));
+    }
 }
