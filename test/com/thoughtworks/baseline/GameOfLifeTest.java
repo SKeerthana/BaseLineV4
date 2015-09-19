@@ -40,4 +40,11 @@ public class GameOfLifeTest {
         GameOfLife gameOfLife = new GameOfLife(state);
         assertEquals(3, gameOfLife.checkForNeighboursCount(1, 1));
     }
+
+    @Test
+    public void shouldReturnFourWhenThereAreFourNeighboursAlive() {
+        String[][] state = {{"X", "X", "X"}, {"X", "-", "-"}, {"-", "-", "-"}};
+        GameOfLife gameOfLife = new GameOfLife(state);
+        assertEquals(4, gameOfLife.checkForNeighboursCount(1, 1));
+    }
 }

@@ -11,7 +11,6 @@ public class GameOfLife {
     public String[][] generateNextGeneration() {
         for (int i = 0; i < state.length; i++) {
             for (int j = 0; j < state[0].length; j++) {
-                int neighboursCount = checkForNeighboursCount(i, j);
             }
         }
         return state;
@@ -23,7 +22,9 @@ public class GameOfLife {
             count++;
         if (state[i - 1][j] == "X")
             count++;
-        if (state[i - 1][j + 1] == "X")
+        if (j+1 < state[0].length && state[i - 1][j + 1] == "X")
+            count++;
+        if( state[i][j-1] == "X")
             count++;
         return count;
     }
