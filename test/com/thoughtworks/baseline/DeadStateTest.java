@@ -9,7 +9,15 @@ public class DeadStateTest {
     @Test
     public void shouldGenerateDeadState() {
         DeadState deadState = new DeadState("-");
+
         assertEquals(deadState, deadState.generateNewState(2));
+    }
+
+    @Test
+    public void shouldGenerateAliveStateWhenNeighboursCountIs3() {
+        DeadState deadState = new DeadState("-");
+
+        assertEquals(new AliveState("X"), deadState.generateNewState(3));
     }
 
     @Test

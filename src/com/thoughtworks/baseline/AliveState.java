@@ -10,9 +10,8 @@ public class AliveState implements State {
 
     @Override
     public State generateNewState(int neighbours) {
-        if (neighbours < 2)
+        if (neighbours < 2 || neighbours > 3)
             return new DeadState("-");
-        ;
         return this;
     }
 

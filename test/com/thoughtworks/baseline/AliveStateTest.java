@@ -15,11 +15,19 @@ public class AliveStateTest {
     }
 
     @Test
-    public void shouldGenerateAliveStateWhenNumberOfNeighbourIs1() {
+    public void shouldGenerateDeadStateWhenNumberOfNeighbourIs1() {
         AliveState aliveState = new AliveState("X");
         DeadState deadState = new DeadState("-");
 
         assertEquals(deadState, aliveState.generateNewState(1));
+    }
+
+    @Test
+    public void shouldGenerateDeadStateWhenNumberOfNeighbourGreaterThan3() {
+        AliveState aliveState = new AliveState("X");
+        DeadState deadState = new DeadState("-");
+
+        assertEquals(deadState, aliveState.generateNewState(4));
     }
 
     @Test
