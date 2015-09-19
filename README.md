@@ -14,3 +14,8 @@ repeatedly to create further generations.
 ###Set up###
 1. Developed in Mac OS
 2. Java 7
+3. Ant
+
+###Command to build and run the testcases###
+Go to the root directory of the problem and run the following command :
+ant runjUnit
