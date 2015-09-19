@@ -54,4 +54,25 @@ public class GameOfLifeTest {
         GameOfLife gameOfLife = new GameOfLife(state);
         assertEquals(1, gameOfLife.checkForNeighboursCount(0, 1));
     }
+
+    @Test
+    public void shouldNotCheckIfColumnIndexValueIsNegative() {
+        String[][] state = {{"X", "X", "X"}, {"X", "-", "-"}, {"-", "-", "-"}};
+        GameOfLife gameOfLife = new GameOfLife(state);
+        assertEquals(0, gameOfLife.checkForNeighboursCount(0, 0));
+    }
+
+    @Test
+    public void shouldNotCheckIfColumnIndexValueIsGreaterThanOriginalColumnLength() {
+        String[][] state = {{"X", "X", "X"}, {"X", "-", "-"}, {"-", "-", "-"}};
+        GameOfLife gameOfLife = new GameOfLife(state);
+        assertEquals(0, gameOfLife.checkForNeighboursCount(2, 2));
+    }
+
+    @Test
+    public void shouldReturnFiveWhenThereAreFiveNeighboursAlive() {
+        String[][] state = {{"X", "X", "X"}, {"X", "-", "X"}, {"-", "-", "-"}};
+        GameOfLife gameOfLife = new GameOfLife(state);
+        assertEquals(5, gameOfLife.checkForNeighboursCount(1, 1));
+    }
 }

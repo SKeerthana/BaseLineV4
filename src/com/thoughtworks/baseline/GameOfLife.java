@@ -18,13 +18,15 @@ public class GameOfLife {
 
     public int checkForNeighboursCount(int i, int j) {
         int count = 0;
-        if (i-1 >= 0 && state[i - 1][j - 1] == "X")
+        if (i - 1 >= 0 && state[i - 1][j - 1] == "X")
             count++;
-        if (i-1 >= 0 && state[i - 1][j] == "X")
+        if (i - 1 >= 0 && state[i - 1][j] == "X")
             count++;
-        if (j+1 < state[0].length && i-1 >= 0 && state[i - 1][j + 1] == "X")
+        if (j + 1 < state[0].length && i - 1 >= 0 && state[i - 1][j + 1] == "X")
             count++;
-        if( state[i][j-1] == "X")
+        if (j - 1 >= 0 && state[i][j - 1] == "X")
+            count++;
+        if (j + 1 < state[0].length && state[i][j + 1] == "X")
             count++;
         return count;
     }
