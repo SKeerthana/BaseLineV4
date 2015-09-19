@@ -50,4 +50,11 @@ public class CellTest {
         Cell cell = new Cell(new AliveState("X"), 0, 0);
         assertNotEquals(cell, "StringToTest");
     }
+
+    @Test
+    public void shouldReturnTrueWhenRowNumberIsSame() {
+        Cell cell1 = new Cell(new AliveState("X"), 0, 0);
+        Cell cell2 = new Cell(new DeadState("-"), 0, 1);
+        assertEquals(cell1, cell2);
+    }
 }

@@ -35,6 +35,7 @@ public class Cell {
     public boolean equals(Object that) {
         if (that == null || that.getClass() != getClass())
             return false;
-        return true;
+        Cell thatCell = (Cell) that;
+        return (thatCell.rowNumber == rowNumber);
     }
 }
