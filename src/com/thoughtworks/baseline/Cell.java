@@ -15,7 +15,24 @@ public class Cell {
     }
 
     public int checkForNeighboursAliveCount(List<Cell> listOfCells) {
+        int[] neighboursRowIndex = {-1, -1, -1, 0, 0, 0, 1, 1, 1};
+        int[] neighboursColumnIndex = {-1, 0, 1, -1, 0, 1, -1, 0, 1};
+        for (int i = 0; i < neighboursRowIndex.length; i++) {
+            Cell cell = findCell(listOfCells, neighboursRowIndex[i], neighboursColumnIndex[i]);
+        }
         return 0;
     }
 
+    public Cell findCell(List<Cell> listOfCells, int rowNumber, int columnNumber) {
+        Cell cellToSearch = new Cell(null, rowNumber, columnNumber);
+        for (Cell cell : listOfCells)
+            if (cell.equals(cellToSearch))
+                return cell;
+        return null;
+    }
+
+    @Override
+    public boolean equals(Object object) {
+        return true;
+    }
 }
