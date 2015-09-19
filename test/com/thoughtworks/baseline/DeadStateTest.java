@@ -36,9 +36,16 @@ public class DeadStateTest {
 
     @Test
     public void shouldReturnTrueWhenStateValueIsSame() {
-        DeadState deadState = new DeadState("X");
-        DeadState deadState1 = new DeadState("X");
+        DeadState deadState = new DeadState("-");
+        DeadState deadState1 = new DeadState("-");
 
         assertEquals(deadState, deadState1);
+    }
+
+    @Test
+    public void shouldBeComparedToItself() {
+        DeadState deadState = new DeadState("-");
+
+        assertEquals(deadState, deadState);
     }
 }
