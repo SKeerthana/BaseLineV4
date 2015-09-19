@@ -21,6 +21,21 @@ public class CellTest {
             add(cell3);
             add(cell4);
         }};
+        assertEquals(2, cell1.checkForNeighboursAliveCount(listOfCells));
+    }
+
+    @Test
+    public void shouldReturnZeroIfAllNeighboursAreInDeadState() {
+        final Cell cell1 = new Cell(new DeadState("-"), 0, 0);
+        final Cell cell2 = new Cell(new DeadState("-"), 0, 1);
+        final Cell cell3 = new Cell(new DeadState("-"), 1, 0);
+        final Cell cell4 = new Cell(new DeadState("-"), 1, 1);
+        List<Cell> listOfCells = new ArrayList<Cell>() {{
+            add(cell1);
+            add(cell2);
+            add(cell3);
+            add(cell4);
+        }};
         assertEquals(0, cell1.checkForNeighboursAliveCount(listOfCells));
     }
 

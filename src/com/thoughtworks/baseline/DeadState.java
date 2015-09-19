@@ -1,5 +1,6 @@
 package com.thoughtworks.baseline;
 
+//Calculates new state for dead cells
 public class DeadState implements State{
     private String state = "-";
 
@@ -15,5 +16,10 @@ public class DeadState implements State{
     @Override
     public boolean equals(Object object) {
         return true;
+    }
+
+    @Override
+    public boolean isAlive(){
+        return false;
     }
 }

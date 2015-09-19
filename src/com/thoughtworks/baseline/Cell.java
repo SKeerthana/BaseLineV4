@@ -17,10 +17,14 @@ public class Cell {
     public int checkForNeighboursAliveCount(List<Cell> listOfCells) {
         int[] neighboursRowIndex = {-1, -1, -1, 0, 0, 0, 1, 1, 1};
         int[] neighboursColumnIndex = {-1, 0, 1, -1, 0, 1, -1, 0, 1};
+        int count = 0;
         for (int i = 0; i < neighboursRowIndex.length; i++) {
             Cell cell = findCell(listOfCells, neighboursRowIndex[i], neighboursColumnIndex[i]);
+            if (cell != null && cell.isAlive()) {
+                count++;
+            }
         }
-        return 0;
+        return count;
     }
 
     public Cell findCell(List<Cell> listOfCells, int rowNumber, int columnNumber) {
@@ -37,5 +41,9 @@ public class Cell {
             return false;
         Cell thatCell = (Cell) that;
         return (thatCell.rowNumber == rowNumber && thatCell.columnNumber == columnNumber);
+    }
+
+    public boolean isAlive() {
+        return currentState.isAlive();
     }
 }

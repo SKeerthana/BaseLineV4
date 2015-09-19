@@ -10,11 +10,18 @@ public class AliveState implements State {
 
     @Override
     public State generateNewState(int neighbours) {
-        return this;
+        if (neighbours < 2)
+            return this;
+        return new DeadState("-");
     }
 
     @Override
     public boolean equals(Object object) {
+        return true;
+    }
+
+    @Override
+    public boolean isAlive(){
         return true;
     }
 }
