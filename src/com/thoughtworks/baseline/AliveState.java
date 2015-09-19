@@ -11,7 +11,8 @@ public class AliveState implements State {
     @Override
     public State generateNewState(int neighbours) {
         if (neighbours < 2)
-            return new DeadState("-");;
+            return new DeadState("-");
+        ;
         return this;
     }
 
@@ -19,11 +20,12 @@ public class AliveState implements State {
     public boolean equals(Object that) {
         if (that == null || that.getClass() != getClass())
             return false;
-        return true;
+        AliveState thatAliveState = (AliveState) that;
+        return thatAliveState.state.equals(state);
     }
 
     @Override
-    public boolean isAlive(){
+    public boolean isAlive() {
         return true;
     }
 }
