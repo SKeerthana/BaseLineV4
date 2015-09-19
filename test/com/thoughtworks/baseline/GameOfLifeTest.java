@@ -14,10 +14,16 @@ public class GameOfLifeTest {
     }
 
     @Test
-    public void shouldReturnNumberOfNeighboursAlive() {
-        String[][] state = {{"X","X"}, {"X","X"}};
+    public void shouldReturnOneWhenOneIsNeighboursAlive() {
+        String[][] state = {{"X","-"}, {"-","-"}};
         GameOfLife gameOfLife = new GameOfLife(state);
-        assertEquals(0, gameOfLife.checkForNeighboursCount());
+        assertEquals(1, gameOfLife.checkForNeighboursCount(1, 1));
     }
 
+    @Test
+    public void shouldReturnZeroWhenThereIsNoNeighbourAlive() {
+        String[][] state = {{"-","-"}, {"-","-"}};
+        GameOfLife gameOfLife = new GameOfLife(state);
+        assertEquals(0, gameOfLife.checkForNeighboursCount(1,1));
+    }
 }
