@@ -1,8 +1,8 @@
 <?xml version = "1.0"?>
 
-<project name="ReceiptCalculator" default="runjUnit" basedir=".">
+<project name="GameOfLife" default="runjUnit" basedir=".">
 
-    <property name="project.name" value="ReceiptCalculator"/>
+    <property name="project.name" value="GameOfLife"/>
     <property name="package.name" value="com.thoughtworks.baseline"/>
 
     <target name="build" depends="clean">
