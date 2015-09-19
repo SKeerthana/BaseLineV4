@@ -47,4 +47,11 @@ public class GameOfLifeTest {
         GameOfLife gameOfLife = new GameOfLife(state);
         assertEquals(4, gameOfLife.checkForNeighboursCount(1, 1));
     }
+
+    @Test
+    public void shouldNotCheckIfRowIndexValueIsNegative() {
+        String[][] state = {{"X", "X", "X"}, {"X", "-", "-"}, {"-", "-", "-"}};
+        GameOfLife gameOfLife = new GameOfLife(state);
+        assertEquals(1, gameOfLife.checkForNeighboursCount(0, 1));
+    }
 }
