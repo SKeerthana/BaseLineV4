@@ -32,7 +32,9 @@ public class Cell {
     }
 
     @Override
-    public boolean equals(Object object) {
+    public boolean equals(Object that) {
+        if (that == null || that.getClass() != getClass())
+            return false;
         return true;
     }
 }
